@@ -36,7 +36,12 @@ body {
     left: 0;
     right: 0;
     z-index: 9999;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+.navbar.scrolled{
+    background-color: #111;
 }
 
 .navbar .navbar-logo a {
@@ -86,6 +91,39 @@ body {
 #menu-toggle {
     display: none;
 }
+
+/* Navbar Search Form */
+.navbar .search-form{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 30rem;
+    height: 3rem;
+    color: var(--primary);
+    background-color: var(--bg);
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.navbar .search-form.active{
+    transform: scaleY(1);
+}
+
+.navbar .search-form input{
+    background-color: var(--bg);
+    width: 100%;
+    height: 100%;
+    color: var(--primary);
+    padding: 1rem;
+}
+
+.navbar .search-form label {
+    margin-right: 1.2rem;
+    font-size: 0.8rem;
+}
+/* Navbar Search Form end*/
 
 /* Navbar End */
 
@@ -151,7 +189,7 @@ body {
 
 /* About Section */
 .about {
-    padding: 6rem 7% 1.4rem;
+    padding: 6rem 7% 6rem;
 }
 
 .about h2 {
@@ -198,7 +236,9 @@ body {
 
 /* Menu Section */
 .menu {
+    background-color: var(--primary);
     padding: 6rem 7% 1.4rem;
+    color: var(--bg);
 }
 
 .menu h2 {
@@ -208,12 +248,12 @@ body {
 }
 
 .menu h2 span {
-    color: var(--primary);
+    color: var(--bg);
 }
 
 .menu p {
     font-size: 1.4rem;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
     max-width: 40rem;
     margin: auto;
@@ -241,7 +281,7 @@ body {
 }
 
 .menu-card .card .menu-card-price {
-    font-weight: 100;
+    font-weight: 300;
 }
 
 /* Menu Section End */
